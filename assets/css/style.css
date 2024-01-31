@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  transition: all .5s ease;
+}
+
+.creator {
+  position: fixed;
+  bottom: .5rem;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-family: 'Caveat', sans-serif;
+  font-size: 1.5rem;
+  text-decoration: none;
+  text-shadow: .1em .1em 0 #000;
+}
+
+#header {
+  width: 100%;
+}
+
+#header .nav {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #343434;
+  text-align: center;
+  transition: all .5s ease;
+}
+
+#header .nav::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(90deg, #E44D26 0 calc(20vw - 2px), #304CDC 0 calc(40vw - 5px), #F5DB3C 0 calc(60vw - 9px), #787CB4 0 calc(80vw - 12px), #A71823 0 calc(100vw));
+  animation: scroll-progress linear;
+  animation-timeline: scroll(root);   
+}
+
+@keyframes scroll-progress {
+  100% {
+    width: 100%;
+  }
+}
+
+#header .nav .nav-item {
+  position: relative;
+  width: 100%;
+  padding: 14px 0;
+  font-size: 1.4rem;
+  color: #fff;
+  border: 2px solid #000;
+  border-top-width: 0;
+  border-bottom-width: 3px;
+  text-decoration: none;
+  z-index: 1;
+  transition: all .5s ease;
+}
+
+#header .nav .nav-item:nth-child(2):hover {
+  background-color: #304CDC;
+}
+
+#header .nav .nav-item:nth-child(3):hover {
+  background-color: #F5DB3C;
+}
+
+#header .nav .nav-item:nth-child(4):hover {
+  background-color: #787CB4;
+}
+
+#header .nav .nav-item:nth-child(5):hover {
+  background-color: #A71823;
+}
+
+.clue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  top: calc(50vh - 15px);
+  right: 20px;
+  width: 30px;
+  height: 50px;
+}
+
+.clue::after {
+  content: 'Scroll';
+  position: absolute;
+  bottom: .6rem;
+  right: 2.5rem;
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.clue i {
+  font-size: 2rem;
+  color: #fff;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  padding-top: 30px;
+  color: #fff;
+  border-bottom: 3px solid #000;
+  font-size: 4rem;
+}
+
+section .definition {
+  font-size: 1.25rem;
+}
+
+section#html {
+  background-color: #E44D26;
+}
+
+section#css {
+  background-color: #304CDC;
+}
+
+section#js {
+  background-color: #F5DB3C;
+}
+
+section#php {
+  background-color: #787CB4;
+}
+
+section#sql {
+  background-color: #A71823;
+}
+
+@media screen and (580px >= width) {
+  #header .nav .nav-item {
+      font-size: 1.2rem;
+  }
+
+  .clue {
+    display: none;
+  }
+}
